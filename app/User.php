@@ -10,14 +10,20 @@ class User extends Authenticatable
 {
     use Notifiable;
 
+
+    const CREATED_AT = 'user_insert_date';
+    const UPDATED_AT = 'user_update_date';
+    protected $primaryKey = 'user_id';
+
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'user_name', 'user_email', 'user_password',
     ];
+
 
     /**
      * The attributes that should be hidden for arrays.
@@ -25,7 +31,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'user_password', 'remember_token',
     ];
 
     /**
@@ -34,6 +40,6 @@ class User extends Authenticatable
      * @var array
      */
     protected $casts = [
-        'email_verified_at' => 'datetime',
+        'user_email_verified_at' => 'datetime',
     ];
 }

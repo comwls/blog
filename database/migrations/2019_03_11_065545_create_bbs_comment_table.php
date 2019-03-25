@@ -19,7 +19,7 @@ class CreateBbsCommentTable extends Migration
             $table->integer('user_id');
             $table->string('bbsc_context');
             $table->timestamp("bbsc_insert_date");
-            $table->timestamp("bbsc_update_date");
+            $table->timestamp("bbsc_update_date")->nullable();
             $table->timestamp("bbsc_delete_date")->nullable();
         });
     }

@@ -20,7 +20,7 @@ class CreateBbsTable extends Migration
             $table->string("bbs_content")->comment("상세설명");
             $table->enum("bbs_state",["active","stop","wait", "delete"]) ->comment("상태값");
             $table->timestamp("bbs_insert_date");
-            $table->timestamp("bbs_update_date");
+            $table->timestamp("bbs_update_date")->nullable();
             $table->timestamp("bbs_delete_date")->nullable();
 
         });
